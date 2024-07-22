@@ -22,7 +22,7 @@ namespace UnitBrains.Player
             //Solution 1.3 - a
             if (GetTemperature() >= OverheatTemperature)
             {
-                break;
+                return;
             }
 
             //Solution 1.3 - b
