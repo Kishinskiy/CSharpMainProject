@@ -57,8 +57,6 @@ namespace UnitBrains.Player
             ///////////////////////////////////////
             List<Vector2Int> result = GetReachableTargets();
             
-            while (result.Count > 1)
-            {
                 float min = float.MaxValue;
                 Vector2Int res = Vector2Int.zero;
                 foreach (var r in result)
@@ -72,13 +70,16 @@ namespace UnitBrains.Player
                    
                 }
               
-               
                 // result.RemoveAt(result.Count - 1);
                 
                 result.Clear();
-                result.Add(res);
-               
-            }
+                if (min != float.MaxValue)
+                {
+                    result.Add(res);
+                }
+                
+                
+                
             
             return result;
             ///////////////////////////////////////
